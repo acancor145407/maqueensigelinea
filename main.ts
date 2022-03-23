@@ -15,3 +15,10 @@ basic.forever(function () {
         maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 75)
     }
 })
+basic.forever(function () {
+    if (maqueen.readPatrol(maqueen.Patrol.PatrolLeft) == 1) {
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+    } else if (maqueen.readPatrol(maqueen.Patrol.PatrolRight) == 1) {
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+    }
+})
